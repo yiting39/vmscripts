@@ -76,6 +76,7 @@ fi
 
 # DPDK Rpms download and tuned profiles download
 SERVER="download-node-02.eng.bos.redhat.com"
+:<<BLOCK
 wget http://$SERVER/brewroot/packages/tuned/2.7.1/5.el7fdb/noarch/tuned-2.7.1-5.el7fdb.noarch.rpm -P /root/tuned/27/.
 wget http://$SERVER/brewroot/packages/tuned/2.7.1/5.el7fdb/noarch/tuned-profiles-cpu-partitioning-2.7.1-5.el7fdb.noarch.rpm -P /root/tuned/27/.
 wget http://$SERVER/brewroot/packages/tuned/2.7.1/5.el7fdb/noarch/tuned-profiles-nfv-2.7.1-5.el7fdb.noarch.rpm -P /root/tuned/27/.
@@ -99,6 +100,7 @@ wget http://$SERVER/brewroot/packages/dpdk/18.11/2.el7_6/x86_64/dpdk-tools-18.11
 mkdir -p /root/dpdkrpms/el8-1811-2
 wget http://$SERVER/brewroot/packages/dpdk/18.11/2.el8/x86_64/dpdk-18.11-2.el8.x86_64.rpm -P /root/dpdkrpms/el8-1811-2/.
 wget http://$SERVER/brewroot/packages/dpdk/18.11/2.el8/x86_64/dpdk-tools-18.11-2.el8.x86_64.rpm -P /root/dpdkrpms/el8-1811-2/.
+BLOCK
 
 if [ "$DPDK_BUILD" == "YES" ]
 then
